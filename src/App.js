@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+
+import InfoSpkNota from "./pages/detail/DetailSpk";
+import EditSpkNota from "./pages/edit/EditSpk";
+import Detailakun from "./pages/akun/DetailAkun";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import "./public/css/style.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/">
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route index element={<Home />} />
+
+          <Route path="editspk/:id" element={<EditSpkNota />} />
+          <Route path="spknota/:id" element={<InfoSpkNota />} />
+          <Route path="info-akun" element={<Detailakun />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
