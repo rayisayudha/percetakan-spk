@@ -1,7 +1,7 @@
 import Home from "./pages/home/Home";
 
 import Register from "./pages/register/Register";
-
+import Login from "./pages/login/Login";
 import InfoSpkNota from "./pages/detail/DetailSpk";
 import EditSpkNota from "./pages/edit/EditSpk";
 import Detailakun from "./pages/akun/DetailAkun";
@@ -14,6 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/">
+          <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route index element={<Home />} />
 
